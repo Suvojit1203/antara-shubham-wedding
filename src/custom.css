@@ -1,0 +1,34 @@
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* The supplied invitation artwork remains the opening screen; the centred tap emblem stays interactive. */
+.opening { background: #330715; min-height: 100dvh; padding: 0; }
+.opening-image { width: 100%; height: 100dvh; object-fit: cover; display: block; }
+.opening-image-button { position: absolute; left: 50%; top: 72%; transform: translate(-50%, -50%); width: min(19vw, 235px); aspect-ratio: 1; border: 0; background: transparent; border-radius: 50%; z-index: 8; }
+.opening.is-opening .opening-image, .opening.is-opening .opening-image-button { animation: fade .65s 2.15s both; }
+
+/* A traditional, high-legibility name treatment instead of the difficult-to-read script. */
+.hero h1 { font-family: var(--serif); font-size: clamp(60px, 9vw, 112px); font-weight: 500; line-height: .8; letter-spacing: -.035em; }
+.hero h1 em { font-size: .38em; font-style: italic; }
+.celebration-intro { margin: 0 0 28px; color: #f6deb3; font: italic 20px var(--serif); }
+.details .event-grid { grid-template-columns: repeat(4, 1fr); max-width: 980px; }
+.details .event-grid article { min-height: 190px; display: grid; align-content: center; }
+
+.family-grid-photo { grid-template-columns: 1fr minmax(170px, 250px) 1fr; gap: 24px; }
+.family-hands { margin: 0; aspect-ratio: 1 / 1.2; overflow: hidden; border: 5px solid #f9e7c2; box-shadow: 0 8px 22px #4a0d2033; }
+.family-hands img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
+.story-photo { overflow: hidden; display: block; background: none; box-shadow: 13px 13px #d8ae6255; }
+.story-photo::before { z-index: 1; pointer-events: none; }
+.story-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
+.venue-list { max-width: 720px; margin: 32px auto 0; display: grid; gap: 16px; }
+.venue-list .venue-card { margin: 0; }
+.venue-card small { text-transform: uppercase; letter-spacing: .1em; color: #a57936; }
+
+@media (max-width: 680px) {
+  .opening-image { width: 100%; object-fit: cover; }
+  .opening-image-button { top: 72%; width: 35vw; }
+  .details .event-grid { grid-template-columns: 1fr 1fr; }
+  .family-grid-photo { grid-template-columns: 1fr; gap: 18px; }
+  .family-hands { width: min(250px, 78vw); margin: 0 auto; order: 2; }
+  .family-grid-photo article:first-child { order: 1; }
+  .family-grid-photo article:last-child { order: 3; }
+}
