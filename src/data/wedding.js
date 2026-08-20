@@ -16,10 +16,10 @@ export const wedding = {
     { title: 'Reception', date: '28 Nov', time: '7:30 PM', icon: '✦' }
   ],
   photos: [
-    { src: '/images/couple-portrait.jpeg', alt: 'Antara and Shubham together', label: 'Our Story', gradient: 'one' },
-    { src: '', alt: 'Antara and Shubham photo placeholder 2', label: 'A Beautiful Beginning', gradient: 'two' },
-    { src: '', alt: 'Antara and Shubham photo placeholder 3', label: 'Together Forever', gradient: 'three' },
-    { src: '', alt: 'Antara and Shubham photo placeholder 4', label: 'Save Our Date', gradient: 'four' }
+    { src: '/images/gallery-1.jpeg', alt: 'Antara and Shubham sharing a happy moment', label: 'A Sweet Beginning', gradient: 'one' },
+    { src: '/images/gallery-2.jpeg', alt: 'Antara and Shubham together in celebration', label: 'Side by Side', gradient: 'two' },
+    { src: '/images/gallery-3.jpeg', alt: 'Antara and Shubham embracing', label: 'Always Us', gradient: 'three' },
+    { src: '/images/gallery-4.jpeg', alt: 'Antara and Shubham in wedding attire', label: 'Our Forever', gradient: 'four' }
   ],
   music: { src: '/music/dhun-instrumental.mp3', label: 'Dhun instrumental' }
 };
