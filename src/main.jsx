@@ -7,5 +7,6 @@ import './custom.css';
 import './celebration-motion.css';
 import './gallery-celebration.css';
 import './mobile-polish.css';
+import './flip-countdown.css';
 
 createRoot(document.getElementById('root')).render(<StrictMode><App /></StrictMode>);

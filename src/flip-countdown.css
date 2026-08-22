@@ -1,0 +1,16 @@
+.flip-countdown { gap: 12px; max-width: 650px; perspective: 700px; }
+.flip-countdown .flip-unit { min-width: 112px; display: grid; gap: 10px; border: 0; padding: 0; background: transparent; flex: 1; }
+.flip-countdown .flip-card { position: relative; min-width: 0; height: 94px; display: flex; color: #ffe0a0; border: 1px solid #d8ae6299; padding: 0; border-radius: 4px; overflow: hidden; background: linear-gradient(#781d34, #460817); box-shadow: 0 6px 0 #26020e, 0 13px 22px #16030a66; }
+.flip-digit { position: relative; flex: 1; height: 100%; overflow: hidden; transform-style: preserve-3d; animation: calendar-turn .54s cubic-bezier(.23,.82,.29,1); }
+.flip-digit + .flip-digit { border-left: 1px solid #d8ae6244; }
+.flip-countdown .flip-top, .flip-countdown .flip-bottom { position: absolute; left: 0; right: 0; height: 50%; overflow: hidden; letter-spacing: 0; text-transform: none; text-shadow: 0 2px 4px #21020d; }
+.flip-countdown .flip-top { top: 0; background: linear-gradient(#8c2b42, #691426); border-bottom: 1px solid #26020e; }
+.flip-countdown .flip-bottom { bottom: 0; background: linear-gradient(#661123, #4a0918); }
+.flip-countdown .flip-number { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; height: 94px; font: 500 62px/1 var(--serif); color: #ffe0a0; }
+.flip-countdown .flip-top .flip-number { transform: translateY(-14px); }
+.flip-countdown .flip-bottom .flip-number { transform: translateY(-58%); }
+.flip-hinge { position: absolute; z-index: 2; left: 0; right: 0; top: calc(50% - 2px); height: 4px; background: #29030e; box-shadow: 0 1px 0 #d8ae6255; }
+.flip-countdown .flip-label { text-transform: uppercase; letter-spacing: .16em; font: 600 9px var(--sans); color: #f3d394; }
+@keyframes calendar-turn { 0% { transform: rotateX(-58deg); filter: brightness(1.5); } 35% { transform: rotateX(10deg); } 100% { transform: rotateX(0); filter: brightness(1); } }
+@media (max-width: 680px) { .flip-countdown { gap: 7px; margin-left: -12px; margin-right: -12px; } .flip-unit { min-width: 0; flex: 1; } .flip-countdown .flip-card { height: 76px; } .flip-countdown .flip-number { height: 76px; font-size: clamp(37px, 11vw, 52px); } .flip-countdown .flip-top .flip-number { transform: translateY(-10px); } .flip-countdown .flip-bottom .flip-number { transform: translateY(-58%); } .flip-countdown .flip-label { font-size: 7px; letter-spacing: .1em; } }
+@media (prefers-reduced-motion: reduce) { .flip-card { animation: none; } }

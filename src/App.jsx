@@ -4,12 +4,20 @@ import { wedding } from './data/wedding';
 
 const fmt = (n) => String(n).padStart(2, '0');
 
+function FlipCard({ value, label }) {
+  const digits = String(value).padStart(2, '0').split('');
+  return <div className="flip-unit" aria-label={`${value} ${label}`}>
+    <div className="flip-card" aria-hidden="true">{digits.map((digit, index) => <span className="flip-digit" key={`${index}-${digit}`}><span className="flip-top"><span className="flip-number">{digit}</span></span><span className="flip-bottom"><span className="flip-number">{digit}</span></span><span className="flip-hinge" /></span>)}</div>
+    <span className="flip-label">{label}</span>
+  </div>;
+}
+
 function Countdown() {
   const target = useMemo(() => new Date(wedding.date), []);
   const [left, setLeft] = useState(() => Math.max(0, target - Date.now()));
   useEffect(() => { const id = setInterval(() => setLeft(Math.max(0, target - Date.now())), 1000); return () => clearInterval(id); }, [target]);
   const d = Math.floor(left / 86400000), h = Math.floor(left / 3600000) % 24, m = Math.floor(left / 60000) % 60, s = Math.floor(left / 1000) % 60;
-  return <div className="countdown" aria-label="Countdown to the wedding">{[[d,'Days'],[h,'Hours'],[m,'Minutes'],[s,'Seconds']].map(([v,l]) => <div key={l}><b>{fmt(v)}</b><span>{l}</span></div>)}</div>;
+  return <div className="countdown flip-countdown" aria-label="Countdown to the wedding"><FlipCard value={fmt(d)} label="Days"/><FlipCard value={fmt(h)} label="Hours"/><FlipCard value={fmt(m)} label="Minutes"/><FlipCard value={fmt(s)} label="Seconds"/></div>;
 }
 
 function Petals({ active }) { return active && <div className="petals" aria-hidden="true">{Array.from({ length: 28 }, (_, i) => <i key={i} style={{ '--i': i, '--x': `${(i * 37) % 100}%`, '--d': `${3 + (i % 5) * .55}s`, '--delay': `${(i % 9) * .14}s` }} />)}</div>; }
