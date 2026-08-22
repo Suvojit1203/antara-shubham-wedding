@@ -9,6 +9,9 @@
 /* A traditional, high-legibility name treatment instead of the difficult-to-read script. */
 .hero h1 { font-family: var(--serif); font-size: clamp(60px, 9vw, 112px); font-weight: 500; line-height: .8; letter-spacing: -.035em; }
 .hero h1 em { font-size: .38em; font-style: italic; }
+.hero .date-card { margin-top: 14px; }
+.hero .scroll-cue { bottom: 14px; }
+@media (max-height: 900px) and (min-width: 681px) { .hero .date-card { margin-top: 28px; margin-bottom: 58px; } .hero .scroll-cue { bottom: 10px; } }
 .celebration-intro { margin: 0 0 28px; color: #f6deb3; font: italic 20px var(--serif); }
 .details .event-grid { grid-template-columns: repeat(4, 1fr); max-width: 980px; }
 .details .event-grid article { min-height: 190px; display: grid; align-content: center; }
@@ -26,6 +29,8 @@
 @media (max-width: 680px) {
   .opening-image { width: 100%; object-fit: cover; }
   .opening-image-button { top: 72%; width: 35vw; }
+  .hero .date-card { margin-top: 20px; }
+  .hero .scroll-cue { bottom: 9px; }
   .details .event-grid { grid-template-columns: 1fr 1fr; }
   .family-grid-photo { grid-template-columns: 1fr; gap: 18px; }
   .family-hands { width: min(250px, 78vw); margin: 0 auto; order: 2; }
