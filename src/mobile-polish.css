@@ -1,0 +1,53 @@
+/* Portrait-first refinements: every section remains legible and touch-friendly on phones. */
+@media (max-width: 680px) {
+  body { overflow-x: hidden; }
+  .opening { min-height: 100svh; }
+  .opening-image { height: 100svh; object-fit: cover; object-position: center; }
+  .opening-image-button { width: 44vw; top: 72%; }
+  header { height: 64px; padding: 0 18px; }
+  .brand { font-size: 28px; }
+  .section { padding: 66px 18px; }
+  .section h2 { font-size: clamp(35px, 11vw, 47px); line-height: .98; }
+  .hero { min-height: calc(100svh - 64px); padding-top: 80px; padding-bottom: 88px; }
+  .hero h1 { font-size: clamp(58px, 16vw, 78px); line-height: .76; }
+  .hero .eyebrow { max-width: 260px; justify-self: center; line-height: 1.7; }
+  .hero-copy { font-size: 18px; padding: 0 12px; }
+  .hero .date-card { width: min(100%, 300px); margin-top: 26px; margin-bottom: 18px; padding: 11px 8px; }
+  .date-card div { flex-wrap: wrap; justify-content: center; column-gap: 8px; row-gap: 3px; }
+  .date-card b { font-size: 18px; }
+  .date-card span { width: 100%; }
+  .hero .scroll-cue { width: 100%; bottom: 14px; justify-content: center; font-size: 8px; }
+  .hanging-bells { top: 5px; }
+  .family-grid-photo { gap: 6px; }
+  .family article { padding: 14px 5px; }
+  .family article h3 { font-size: 38px; line-height: .9; }
+  .family article b { font-size: 18px; }
+  .family-hands { width: min(235px, 74vw); }
+  .details .event-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .details .event-grid article { min-height: 145px; padding: 18px 7px; }
+  .event-grid h3 { font-size: 25px; }
+  .countdown { margin: 30px -8px 0; gap: 4px; }
+  .countdown div { padding: 9px 3px; }
+  .countdown b { font-size: 24px; }
+  .countdown span { font-size: 7px; letter-spacing: .08em; }
+  .story { gap: 32px; }
+  .story-photo { width: min(100%, 330px); aspect-ratio: 4 / 5; }
+  .story p:not(.eyebrow) { font-size: 18px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+  .gallery-grid .photo { aspect-ratio: 3 / 4; }
+  .gallery-grid figcaption { padding: 22px 6px 8px; font-size: 18px; }
+  .venue-card { padding: 18px; gap: 12px; }
+  .venue-card h3 { font-size: 26px; }
+  .venue-card p { font-size: 16px; line-height: 1.35; }
+  .greeting p:not(.eyebrow) { font-size: 19px; }
+  footer { padding: 48px 18px; }
+  footer h2 { font-size: 42px; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 55px; }
+  .details .event-grid { grid-template-columns: 1fr; }
+  .details .event-grid article { min-height: 126px; }
+  .gallery-grid { gap: 7px; }
+  .countdown b { font-size: 21px; }
+}
