@@ -10,6 +10,7 @@
 .hero h1 { font-family: var(--serif); font-size: clamp(60px, 9vw, 112px); font-weight: 500; line-height: .8; letter-spacing: -.035em; }
 .hero h1 em { font-size: .38em; font-style: italic; }
 .hero .date-card { margin-top: 14px; }
+.hero .date-card { border-top: 0; border-bottom: 0; }
 .hero .scroll-cue { bottom: 14px; }
 @media (max-height: 900px) and (min-width: 681px) { .hero .date-card { margin-top: 28px; margin-bottom: 58px; } .hero .scroll-cue { bottom: 10px; } }
 .celebration-intro { margin: 0 0 28px; color: #f6deb3; font: italic 20px var(--serif); }
